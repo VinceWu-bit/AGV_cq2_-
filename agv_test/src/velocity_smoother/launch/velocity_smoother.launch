@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="velocity_smoother" type="velocity_smoother" name="velocity_smoother_node" output="screen" >
+        <!-- -->
+        <remap from="raw_cmd_vel" to="base_controller/command" />
+        <remap from="smooth_cmd_vel" to="cq2_base/cmd_vel" />
+        <param name="verbose" value="false" />
+        <param name="frequency" value="20.0" />
+        <param name="velocity_timeout" value="0.2" />
+        <param name="speed_max_x" value="1.0" />
+        <param name="speed_min_x" value="-1.0" />
+        <param name="speed_max_y" value="1.0" />
+        <param name="speed_min_y" value="-1.0" />
+        <param name="speed_lim_w" value="1.0" />
+        <param name="accel_lim_x" value="1.0" />
+        <param name="accel_lim_y" value="1.0" />
+        <param name="accel_lim_w" value="1.0" />
+        <param name="decel_factor" value="1.5" />
+    </node>
+
+</launch>
